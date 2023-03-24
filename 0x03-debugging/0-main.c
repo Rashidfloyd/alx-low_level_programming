@@ -1,18 +1,16 @@
-#include <stdio.h>
-#include "variadic_functions.h"
+#include "main.h"
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * main - tests function that prints if integer is positive or negative
+ * Return: 0
  */
+
 int main(void)
 {
-	int sum;
+	int i;
 
-	sum = sum_them_all(2, 98, 1024);
-	printf("%d\n", sum);
-	sum = sum_them_all(4, 98, 1024, 402, -1024);
-	printf("%d\n", sum);    
+	i = 0;
+	positive_or_negative(i);
+
 	return (0);
 }
