@@ -22,5 +22,4 @@ char *_strpbrk(char *s, char *accept)
 	}
 	return (0);
 }
-Footer
-© 2023 GitHub
+
