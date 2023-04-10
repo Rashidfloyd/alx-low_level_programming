@@ -1,58 +1,46 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#define UNUSED(x) (void)(x)
+#define UNUSED(x)(void)(x)
 /**
- * StringCheck - checks string
- * @s: string to check
- * Return: boolean
+ * main - adds two numbers
+ * @argc:int
+ * @argv:array of strings
+ * Return: sum if all digits
  */
-int StringCheck(char *s)
-{
-	int i = 0;
-
-	for (; s[i] != '\0'; i++)
-	{
-		if (!isdigit(s[i]))
-		{
-			return (0);
-		}
-	}
-	return (1);
-}
-/**
- * main - main function
- * @argc: argumentc
- * @argv: vector of arguments
- *Return: always 0
- */
-int main(int argc, char  *argv[])
+int main(int argc, char *argv[])
 {
 	int i;
-	int result = 0;
+	int j;
+	int c;
+	int sum;
+	char *s;
 
-	if (argc > 1)
+	sum = 0;
+	c = 0;
+
+	i = 1;
+	while (i < argc)
 	{
-		for (i = 1; i < argc; i++)
+		s = argv[i];
+		j = 0;
+		while (s[j] != '\0')
 		{
-			if (StringCheck(argv[i]))
-			{
-				result += atoi(argv[i]);
-			}
-			else
+			if (s[j] < '0' || s[j] > '9')
 			{
 				printf("Error\n");
 				return (1);
 			}
+			j++;
 		}
-		printf("%d\n", result);
-		return (0);
-	}
-	else
-	{
-		printf("%d\n", 0);
-		return (1);
+		i++;
 	}
 
+	for (i = 1; i < argc; i++)
+	{
+		c = atoi(argv[i]);
+		sum = sum + c;
+	}
+	printf("%d\n", sum);
+	return (0);
 }
