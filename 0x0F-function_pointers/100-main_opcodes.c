@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 /**
 * main - returns op codes for address of main
